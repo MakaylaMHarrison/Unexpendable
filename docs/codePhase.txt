@@ -1,0 +1,96 @@
+
+
+// =====================================================
+// phaseModel.ts
+// =====================================================
+// This file translates frontend dropdown signals
+// into backend structural phases.
+// It is deterministic, type-safe, and fully controlled.
+// No text parsing. No inference. No magic.
+// =====================================================
+
+
+// -----------------------------------------------------
+// TYPE DEFINITIONS
+// -----------------------------------------------------
+
+// These are the structural phases used internally.
+// They determine the system’s behavior in pressure/risk calculations.
+export type Phase =
+  | "growth"
+  | "consolidation"
+  | "extraction"
+  | "decline";
+
+// These are the controlled frontend signals from dropdowns.
+// The user only selects one of these. No free text.
+export type CompanyPhaseSignal =
+  | "GROWTH"     // Company is actively expanding
+  | "FREEZE"     // Hiring or spending freeze
+  | "REORG"      // Reorganization of teams/processes
+  | "LAYOFFS";   // Active layoffs ongoing
+
+// Input contract for the classifier
+export interface PhaseInput {
+  companyPhaseSignal: CompanyPhaseSignal;
+}
+
+// Output of the phase classifier
+export interface PhaseResult {
+  phase: Phase;
+}
+
+
+// -----------------------------------------------------
+// MAPPING TABLE: FRONTEND SIGNAL → STRUCTURAL PHASE
+// -----------------------------------------------------
+
+// This object is the core deterministic mapping.
+// Each frontend signal maps to a structural phase.
+// Typed to prevent invalid entries.
+const SIGNAL_TO_PHASE_MAP: Record<CompanyPhaseSignal, Phase> = {
+
+  // Expansion signals structural growth
+  GROWTH: "growth",
+
+  // Freeze signals internal compression → consolidation
+  FREEZE: "consolidation",
+
+  // Reorganization also maps to consolidation
+  REORG: "consolidation",
+
+  // Layoffs signal contraction → decline
+  LAYOFFS: "decline",
+};
+
+
+// -----------------------------------------------------
+// PHASE CLASSIFIER FUNCTION
+// -----------------------------------------------------
+
+/**
+  * classifyPhase
+  * ------------------------
+  * Accepts a frontend signal and returns a structural phase.
+ \*
+  * Input:
+  * { companyPhaseSignal: CompanyPhaseSignal }
+ \*
+  * Output:
+  * { phase: Phase }
+ \*
+  * Deterministic. No external dependencies. No inference.
+ */
+export function classifyPhase(input: PhaseInput): PhaseResult {
+
+  // Extract signal from input
+  const { companyPhaseSignal } = input;
+
+  // Lookup structural phase from mapping table
+  // Type-safe: impossible to get undefined unless TypeScript type is violated
+  const phase = SIGNAL_TO_PHASE_MAP[companyPhaseSignal];
+
+  // Return backend structural phase only
+  // Does not include narrative, risk, or role info
+  return { phase };
+}
