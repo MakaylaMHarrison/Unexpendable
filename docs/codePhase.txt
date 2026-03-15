@@ -84,7 +84,7 @@ const SIGNAL_TO_PHASE_MAP: Record<CompanyPhaseSignal, Phase> = {
 export function classifyPhase(input: PhaseInput): PhaseResult {
 
   // Extract signal from input
-  const { companyPhaseSignal } = input;
+  const { companyPhaseSignal } = input
 
   // Lookup structural phase from mapping table
   // Type-safe: impossible to get undefined unless TypeScript type is violated

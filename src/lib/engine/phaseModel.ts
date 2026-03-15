@@ -56,8 +56,23 @@ export interface PhaseResults {
 //* Each frontend signal mapps to structural phase
 
 const SIGNAL_TO_PHASE_MAP: Record<CompanyPhaseSignal, Phase> = {
+
+    //*Expansion signals -> structural growth
     GROWTH: "growth",
-    FREEZE: "consolidation",
-    REORG: "extraction",
+
+    //* Freeze signals internal -> Profit protection and spending clamp
+    FREEZE: "extraction",
+
+    //*Reorganization signals -> Strictural compression               
+    REORG: "consolidation",
+
+    //*Layoffs signal contraction -> Decline
     LAYOFFS: "decline"    
 };  
+   
+//*====================================================================
+//*                PHASE CLASSIFIER FUNCTION       
+//*====================================================================
+/** 
+*w
+*/
