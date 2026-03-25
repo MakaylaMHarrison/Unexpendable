@@ -1,0 +1,108 @@
+// =====================================================
+// roleTypeModel.ts
+// =====================================================
+// This file maps human-centered dropdown selections
+// to internal role types used by the engine.
+//
+// Users describe what they mostly do.
+// The system translates that into structural role categories.
+//
+// This file does NOT:
+// - Determine pressure position
+// - Determine risk
+// - Contain narrative logic
+//
+// It is a pure translation layer.
+// =====================================================
+
+
+// -----------------------------------------------------
+// TYPE DEFINITIONS
+// -----------------------------------------------------
+
+// Internal role categories used by the engine.
+// These are structural classifications — not user-facing.
+export type RoleType =
+  | "builder"       // Produces or delivers core outputs
+  | "coordinator"   // Organizes people/projects
+  | "optimizer"     // Improves or monitors systems
+  | "support"       // Enables others to function
+  | "leader";       // Sets direction or priorities
+
+
+// Frontend dropdown values (human-centered language).
+// These are EXACT strings from the UI dropdown.
+// No free text allowed.
+export type RoleSignal =
+  | "I make or deliver things"
+  | "I keep people or projects organized"
+  | "I improve, check, or fine-tune how things work"
+  | "I help others do their jobs"
+  | "I decide direction or priorities";
+
+
+// Input contract for classification.
+export interface RoleInput {
+  roleSignal: RoleSignal;
+}
+
+
+// Output contract for classification.
+export interface RoleResult {
+  roleType: RoleType;
+}
+
+
+// -----------------------------------------------------
+// ROLE SIGNAL → INTERNAL ROLE TYPE MAPPING
+// -----------------------------------------------------
+
+// Deterministic translation table.
+// Human description → structural role type.
+//
+// This keeps UX language separate from engine taxonomy.
+const SIGNAL_TO_ROLETYPE_MAP: Record<RoleSignal, RoleType> = {
+
+  // Produces output directly
+  "I make or deliver things": "builder",
+
+  // Translates and organizes work
+  "I keep people or projects organized": "coordinator",
+
+  // Improves, audits, measures, or tunes systems
+  "I improve, check, or fine-tune how things work": "optimizer",
+
+  // Absorbs variability and enables others
+  "I help others do their jobs": "support",
+
+  // Sets priorities and direction
+  "I decide direction or priorities": "leader",
+};
+
+
+// -----------------------------------------------------
+// ROLE TYPE CLASSIFIER
+// -----------------------------------------------------
+
+/**
+  * classifyRoleType
+  * ------------------------
+  * Accepts a human-readable dropdown selection.
+  * Returns an internal structural role type.
+  *
+  * Deterministic.
+  * No inference.
+  * No ambiguity.
+ */
+ 
+export function classifyRoleType(input: RoleInput): RoleResult {
+
+  // Extract user-selected dropdown string
+  const { roleSignal } = input;
+
+  // Translate human language → structural category
+  const roleType = SIGNAL_TO_ROLETYPE_MAP[roleSignal];
+
+  // Return internal role classification
+  return { roleType };
+}

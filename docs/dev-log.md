@@ -93,7 +93,37 @@ cd
 Environment context determines execution behavior.
 Commands run based on *where you are*, not where the project exists.
 
----
+===========================================
 Entry : 2/28 [Last day of feburary]
 -Create source folder that has the building blocks of app that includes:
     src/lib/classification.ts
+==============================================
+
+## 📘 Entry #002
+**Date:** 2026-03-20
+
+## Task
+
+Set up Git remote and perform initial push for project.
+
+## Context
+
+First time pushing this project; no remote repository was previously configured.
+
+## Steps Taken
+
+* Checked for existing remotes using `git remote -v`
+* Created a new repository on GitHub
+* Added remote with `git remote add origin <repo-url>`
+* Verified remote was added correctly
+* Pushed code using `git push -u origin main`
+
+## Outcome
+
+Remote repository successfully connected and initial codebase pushed. Upstream tracking established for simpler future pushes.
+
+## Notes
+
+* Default remote name used: `origin`
+* Future pushes can be done with `git push`
+==============================================

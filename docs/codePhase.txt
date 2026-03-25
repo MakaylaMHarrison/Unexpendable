@@ -53,10 +53,10 @@ const SIGNAL_TO_PHASE_MAP: Record<CompanyPhaseSignal, Phase> = {
   // Expansion signals structural growth
   GROWTH: "growth",
 
-  // Freeze signals internal compression → consolidation
-  FREEZE: "consolidation",
+  // Freeze signals internal  → Profit protection and spending clamp
+  FREEZE: "extraction",
 
-  // Reorganization also maps to consolidation
+  // Reorganization signals -> Structural compression
   REORG: "consolidation",
 
   // Layoffs signal contraction → decline
@@ -72,13 +72,13 @@ const SIGNAL_TO_PHASE_MAP: Record<CompanyPhaseSignal, Phase> = {
   * classifyPhase
   * ------------------------
   * Accepts a frontend signal and returns a structural phase.
- \*
+  *
   * Input:
   * { companyPhaseSignal: CompanyPhaseSignal }
- \*
+  *
   * Output:
   * { phase: Phase }
- \*
+  *
   * Deterministic. No external dependencies. No inference.
  */
 export function classifyPhase(input: PhaseInput): PhaseResult {
