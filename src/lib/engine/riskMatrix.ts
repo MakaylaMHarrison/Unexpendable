@@ -136,4 +136,76 @@ Assign risk level to each phase with all pressure position
 in each phase.
 */
 
-const RISK_MATRIX: Record<Phase, 
+const RISK_MATRIX: Record<Phase, Record<PressurePosition, RiskLevel>> = {
+
+    growth: {
+        origin: "low",
+        control: "low",
+        translation: "moderate",
+        execution: "low",
+        buffer: "moderate",
+        peripheral: "moderate",
+    },
+
+    consolidation: {
+         origin: "low",
+        control: "low",
+        translation: "high",
+        execution: "moderate",
+        buffer: "high",
+        peripheral: "high",
+    },
+
+    extraction:{
+        origin: "low",
+        control: "moderate",
+        translation: "high",
+        execution: "high",
+        buffer: "extreme",
+        peripheral: "extreme",
+    },
+
+    decline: {
+         origin: "moderate",
+        control: "moderate",
+        translation: "high",
+        execution: "high",
+        buffer: "extreme",
+        peripheral: "extreme",
+    },   
+};
+
+/*
+=======================================================
+Risk Evaluation Function
+======================================================
+This function is stateless it doesnt store anything
+The entire system depends on input types
+
+-------------------------------------
+SYSTEM LEVEL VIEW
+-------------------------------------
+1. INPUT LAYERE
+    -RECIEVES SYSTEM STATE
+2. DECISION LAYER
+USES: [PHASE_BEHAVIOR,POSITION_BEHAVIOR, RISK_MATRIX]
+    -THIS ACT AS SYSTEM CONFIGURE DRIVEN RULES
+3.OUTPUT LAYER
+    -PRODUCES RISK LEVEL
+    - RECOMMENDED BEHAVIORS
+
+*/
+                                //INPUT                                         //OUTPUT
+export function evulateRisk (phase: Phase, pressurePosition: PressurePosition): RiskResult {
+
+    const riskLevel = RISK_MATRIX[phase][pressurePosition]; //LOOKUP MAPPING
+
+    return { //OUTPUT PAYLOAD
+        riskLevel, //OUTPUT
+        behavior: {  //BEHAVIOR OBJECT      
+            positionBehavior: POSITION_BEHAVIOR  //PRESSUREPOSITION BEHAVIOR
+            [pressurePosition],  
+            phaseBehavior: PHASE_BEHAVIOR [phase], //PHASE BEHAVIOR
+        } //CLOSING OBJECT
+    }; //FUNCTION END
+}
