@@ -1,17 +1,19 @@
 /*
+
 ===========================================================
-            narrativeTemplate.TS
+            narrativeTemplates.ts
 ===========================================================
--This is file is the narrratives that will be displayed for 
+-This file contains the narratives that will be displayed for 
 every phase and pressure position.
--Every phase and pressure posititon has an id string.
+-Every phase and pressure position has an id string.
 -The ID is [phase][pressurePosition]
--Sections explain the system the user is standing in
--Sections are broken into 4 parts each part plays its role in the System Mapping frontend interface
--Once this file is called it recieves the input of the phase and origin
+-Sections explain the system the user is standing in.
+-Sections are broken into 4 parts. Each part plays its role in the System Mapping frontend interface
+-Once this file is called it receives the input of the phase and origin.
 */
 
 //Output of the id that will return the structural sections
+//Shaping what the data will look like
 export interface NarrativeTemplate {
     id: string;
     sections: {
@@ -37,13 +39,13 @@ Growth Phase Template
             create direction in real time, and prioritize momentum over perfect clarity.`,
             whyItFeelsBad:
             `Even when this phase feels exciting, it can feel messy up close.
-            Decisions stack up, and you may be carry more than people realize.`,
+            Decisions stack up, and you may be carrying more than people realize.`,
             whatHappensNext:
-            `In systems like this new teams and layers form, and complexity increases
+            `In systems like this, new teams and layers form, and complexity increases
             before things fully settle.`,
             whatItMeansForYou:
             `Roles close to direction-setting are usually needed here.
-            The pressure you're feeling is about responsibilty increasing,
+            The pressure you're feeling is about responsibility increasing,
             not about being pushed out.`
         }
     },
@@ -58,9 +60,9 @@ Growth Phase Template
             `When everything is expanding together, priorities can blur. You may feel
             like you're constantly trying to create clarity in something that keeps shifting.`,
             whatHappensNext:
-            `Structure and process begin to form over time as the system tries to manage the scale`,
+            `Structure and process begin to form over time as the system tries to manage the scale.`,
             whatItMeansForYou:
-            `These roles tend to become more important as growth continue. The difficulty here
+            `These roles tend to become more important as growth continues. The difficulty here
             comes from volume and the complexity, not from structural risk.`
 
         }
@@ -76,7 +78,7 @@ Growth Phase Template
             `You may feel pulled between evolving direction and real-world execution.
             That gap can be exhausting to hold.`,
             whatHappensNext:
-            `Over time, some ambuity settles, but usually only after structure catches up to
+            `Over time, some ambiguity settles, but usually only after structure catches up to
             what's already in motion.`,
             whatItMeansForYou:
             `This role is valuable in growth, but often overloaded.
@@ -90,7 +92,7 @@ Growth Phase Template
         sections: {
             whatsHappening:
             `You're in a growth system. These systems push for more output,
-            faster delivery, and vidible progress.`,
+            faster delivery, and visible progress.`,
             whyItFeelsBad:
             `The pace can increase quietly. Expectations rise, and it may feel like you're always
             trying to keep up.`,
@@ -111,7 +113,7 @@ Growth Phase Template
             `You're in a growth system. These systems create more activity than they can 
             smoothly support, increasing the need for stabilization.`,
             whyItFeelsBad:
-            `You may feel like you're constantly reacting putting out issues without much
+            `You may feel like you're constantly reacting, putting out issues without much
             time to step back.`,
             whatHappensNext:
             `Support layers tend to expand as the system tries
@@ -152,7 +154,7 @@ Growth Phase Template
         id: "consolidation_origin",
         sections: {
             whatsHappening:
-            `You're in consolidation system. These systems reduce expansion, narrow focus, 
+            `You're in a consolidation system. These systems reduce expansion, narrow focus, 
             and prioritize control.`,
             whyItFeelsBad:
             `The tone shifts here. What once felt open can start to feel constrained,
@@ -161,7 +163,7 @@ Growth Phase Template
             `Spending slows, focus narrows, and constraints begin to move
             downward through the system.`,
             whatItMeansForYou:
-            `Roles shaping direction are usually protected. What you're feelin is a 
+            `Roles shaping direction are usually protected. What you're feeling is a 
             system tightening, not something you caused.`
      
         }
@@ -208,7 +210,7 @@ Growth Phase Template
     },
 
      "consolidation_execution": {
-        id: "consolidation_exection",
+        id: "consolidation_execution",
         sections: {
             whatsHappening:
             `You're in a consolidation system. These systems continue producing,
@@ -239,7 +241,7 @@ Growth Phase Template
             `Non-core layers are often reduced, and responsibilities get
             redistributed.`,
             whatItMeansForYou:
-            `This is a structurally expose position in this phase, regardless
+            `This is a structurally exposed position in this phase, regardless
             of individual performance.`
      
         }   
@@ -275,7 +277,7 @@ Growth Phase Template
         id: "extraction_origin",
         sections: {
             whatsHappening:
-            `You're in a extraction system. These systems focus on
+            `You're in an extraction system. These systems focus on
             maximizing output, efficiency, and return.`,
             whyItFeelsBad:
             `Decisions can feel more numbers-driven, which can make the
@@ -296,7 +298,7 @@ Growth Phase Template
         id: "extraction_control",
         sections: {
             whatsHappening:
-            `You're in a extraction system. These systems tighten financial
+            `You're in an extraction system. These systems tighten financial
             discipline and track performance closely.`,
             whyItFeelsBad:
             `Everything may feel more measured, with less room for
@@ -316,7 +318,7 @@ Growth Phase Template
         id: "extraction_translation",
         sections: {
             whatsHappening:
-            `You're in a extraction system. These systems reduce amiguity
+            `You're in an extraction system. These systems reduce ambiguity
             and favor direct, output-linked work.`,
             whyItFeelsBad:
             `There's less space for nuance, which can make your role feel
@@ -336,14 +338,14 @@ Growth Phase Template
         id: "extraction_execution",
         sections: {
             whatsHappening:
-            `You're in a extraction system. These systems push for
-            higher output and measureable results.`,
+            `You're in an extraction system. These systems push for
+            higher output and measurable results.`,
             whyItFeelsBad:
             `You may feel more evaluated or compared, with clearer 
             pressure to perform.`,
             whatHappensNext:
             `Throughput expectations increase, and performance is tracked more
-            closely. Overtime is compared more directly across roles.`,
+            closely. Output is compared more directly across roles.`,
             whatItMeansForYou:
             `These roles are necessary, but are often assessed for efficiency
             and replaceability.`
@@ -356,11 +358,11 @@ Growth Phase Template
         id: "extraction_buffer",
         sections: {
             whatsHappening:
-            `You're in a extraction system. These systems evaluate support work 
+            `You're in an extraction system. These systems evaluate support work 
             based on direct contribution to output.`,
             whyItFeelsBad:
             `Indirect work can feel harder to defend, even if
-            it's sill needed.`,
+            it's still needed.`,
             whatHappensNext:
             `Overhead is gradually reduced, and support functions are streamlined. 
             The system moves toward keeping only what is clearly necessary.`,
@@ -376,8 +378,8 @@ Growth Phase Template
         id: "extraction_peripheral",
         sections: {
             whatsHappening:
-            `You're in a extraction system. These systems remove work not
-            directly ties to immediate return.`,
+            `You're in an extraction system. These systems remove work not
+            directly tied to immediate return.`,
             whyItFeelsBad:
             `Longer-term or exploratory work can lose protection, even
             if it once mattered.`,
@@ -404,7 +406,7 @@ Growth Phase Template
             `You're in a decline system. These systems are focused on 
             survival and reducing loss.`,
             whyItFeelsBad:
-            `Decision can feel urgent and heavy, with less time for consideration.`,
+            `Decisions can feel urgent and heavy, with less time for consideration.`,
             whatHappensNext:
             `Reductions tend to happen quickly. Scope contracts, and the
             system shifts its focus toward stability above all else.`,
@@ -420,7 +422,7 @@ Growth Phase Template
         id: "decline_control",
         sections: {
             whatsHappening:
-            `You're in a decline system. These systems tightrn spending 
+            `You're in a decline system. These systems tighten spending 
             sharply and limit flexibility.`,
             whyItFeelsBad:
             `Austerity can become the default, which changes how decisions are made.`,
@@ -442,24 +444,77 @@ Growth Phase Template
             `You're in a decline system. These systems shrink teams and
             reduce scope across the board.`,
             whyItFeelsBad:
-            `You may feel blamed for problems you didnt create, or caught 
+            `You may feel blamed for problems you didn't create, or caught 
             between expectations and reality.`,
             whatHappensNext:
-            `Pressure tends to concentrate here first, before cascading futher downward
+            `Pressure tends to concentrate here first, before cascading further downward
             as reductions continue and work is redistributed under strain.`,
             whatItMeansForYou:
-            `Thes roles are highly exposed in this phase. That exposure
+            `These roles are highly exposed in this phase. That exposure
             is structural, not a reflection of your ability.`
      
         }
 
     },
 
+    "decline_execution": {
+        id: "decline_execution",
+        sections: {
+            whatsHappening: 
+            `You're in a decline system. These systems narrow down to 
+            essential output.`,
+            whyItFeelsBad: 
+            `Demand will be shrinking, which can make workloads feel unstable or uncertain.`,
+            whatHappensNext:
+            `Production capacity decreases over time, and headcount
+            reductions often follow as the system continues to contract.`,
+            whatItMeansForYou:
+            `These roles are reduced after other layers and continue to be reduced
+            as contraction continues.`
 
+        }
+    },
 
+      "decline_buffer": {
+        id: "decline_buffer",
+        sections: {
+            whatsHappening: 
+            `You're in a decline system. These systems rapidly reduce
+            stabilizing and support layers.`,
+            whyItFeelsBad: 
+            `Work can spike right before changes happen,
+            which can feel disorienting.`,
+            whatHappensNext:
+            `Support functions are reduced quickly, and remaining work
+            is redistributed as the system focuses on preserving
+            only what is essential.`,
+            whatItMeansForYou:
+            `These roles face very high structural exposure
+            in this phase.`
+
+        }
+    },
+
+      "decline_peripheral": {
+        id: "decline_peripheral",
+        sections: {
+            whatsHappening: 
+            `You're in a decline system. These systems focus
+            almost entirely on immediate survival.`,
+            whyItFeelsBad: 
+            `Work not tied to immediate outcomes can become
+            very hard to defend.`,
+            whatHappensNext:
+            `Optional work is removed first, and focus narrows toward
+            only what is critical for survival.`,
+            whatItMeansForYou:
+            `These roles are typically eliminated early in decline phases.`
+
+        }
+    },
 
     
-}
+};
 
 
 

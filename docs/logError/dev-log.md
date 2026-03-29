@@ -93,11 +93,13 @@ cd
 Environment context determines execution behavior.
 Commands run based on *where you are*, not where the project exists.
 
-===========================================
+======================================================================
 Entry : 2/28 [Last day of feburary]
 -Create source folder that has the building blocks of app that includes:
     src/lib/classification.ts
 ==============================================
+
+
 
 ## 📘 Entry #002
 **Date:** 2026-03-20
