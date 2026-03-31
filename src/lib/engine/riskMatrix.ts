@@ -196,7 +196,7 @@ USES: [PHASE_BEHAVIOR,POSITION_BEHAVIOR, RISK_MATRIX]
 
 */
                                 //INPUT                                         //OUTPUT
-export function evulateRisk (phase: Phase, pressurePosition: PressurePosition): RiskResult {
+export function evaluateRisk (phase: Phase, pressurePosition: PressurePosition): RiskResult {
 
     const riskLevel = RISK_MATRIX[phase][pressurePosition]; //LOOKUP MAPPING
 

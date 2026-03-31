@@ -85,3 +85,23 @@ FILE: NARRATIVETEMPLATE.TS
 ==============================================
 DESCRIPTION:
 -NEED TO CHANGE THE NARRATIVE TEMPLATE SECTIONS TO SPECK TO LAID OFF WORKERS
+=======================================================
+
+
+ENTRY LOG: 3.29
+FILE: SYSTEMMAPBUILDER.TS
+==========================
+DESCRIPTION:
+-FINISH MAP BUILDER FUCTION
+-LOOK UP WHAT EACH LINE OF CODE MEANS AND WHAT IT DOES
+-GO THROUGH EACH SECTION
+-NEED TO REBUILD INDEX.TS AND UNDERSTAND EXACTLY WHY
+-THEN BUILD API
+=============================================================
+
+LOG ENTRY: 3.30
+FILE: SYSTEMMAPBUILDER.TS
+=================================================
+DESCRIPTION: 
+-FINISH GENERATE TEMPLATE ID
+=====================================================
