@@ -1,5 +1,5 @@
 1. Overview: 
-This module implementa Company Phase Model. It uses companyPhaseSignals dropdown and then turns into structural backend results the phaseResults. Uses Determinisitic logic. Use a SIGNAL_TO_PHASE_MAP to determine what frontend signal maps to backend structural phase. The classifyPhase function allows the input to be made and gets the input and looks up company phase through mapping table then returns the result. 
+This module implements a Company Phase Model. It uses companyPhaseSignals dropdown and then turns into structural backend results the phaseResults. Uses Determinisitic logic. Use a SIGNAL_TO_PHASE_MAP to determine what frontend signal maps to backend structural phase. The classifyPhase function allows the input to be made and gets the input and looks up company phase through mapping table then returns the result. 
  # It ensures a deterministic, controlled mapping between what users select in the UI and how the system interprets the company’s operational phase.
 
 2. Goals:

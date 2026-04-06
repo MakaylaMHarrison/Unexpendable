@@ -105,3 +105,34 @@ FILE: SYSTEMMAPBUILDER.TS
 DESCRIPTION: 
 -FINISH GENERATE TEMPLATE ID
 =====================================================
+
+LOG ENTRY: 3.31
+FILE: NEED DOC FOR INDEX.TS
+===================================
+-NEED MENTAL MODEL OF FILE:
+    -YOU DESIGNED A LAYERED SYSTEM
+    -EACH FILE IS A SUBSYSTEM
+-Create doc in trello (new version index.ts) that explains how
+a system should be properly designed: 
+🧠 Senior-Level Insight (This Is Why This Is Strong)
+## What you have now is:
+a pure core engine
+a thin boundary layer
+a controlled input domain
+a stable output contract
+That’s the foundation of:
+scalable systems
+APIs
+real production architecture
+===========================================
+
+
+LOG ENTRY: 4.4
+FILE: ROUTE.TS
+====================================
+DESCRIPTION:
+-MENTAL MODEL AROUNG WHY @/... FOR IMPORT TO GET THE INDEX FILE. FILE IS IN A DIFFERENT FOLDER SO YOU HAVE TO IMPORT IT DIFFERENTLY.
+-CONTINUE DOING API:
+    -ADDING IN GLOSSARY
+    -DEV ERRORS IF NEEDED
+==========================================

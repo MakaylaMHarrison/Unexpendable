@@ -129,3 +129,32 @@ Remote repository successfully connected and initial codebase pushed. Upstream t
 * Default remote name used: `origin`
 * Future pushes can be done with `git push`
 ==============================================
+
+## 🐛 Error: Cannot find module '@/lib/engine'
+
+### Type:
+TypeScript Path Alias Resolution Error
+
+### Cause:
+`@/` alias was defined in `paths` but `baseUrl` was missing.
+TypeScript could not resolve the absolute import.
+
+### Fix:
+Add `baseUrl: "src"` and correct paths mapping:
+
+{
+  "compilerOptions": {
+    "baseUrl": "src",
+    "paths": {
+      "@/*": ["*"]
+    }
+  }
+}
+
+### Insight:
+Absolute imports require BOTH:
+- baseUrl (root)
+- paths (alias mapping)
+
+Without baseUrl, alias has no anchor.
+==============================================

@@ -25,8 +25,8 @@ import {classifyPhase, type Phase,} from "./phaseModel";
 import {classifyRoleType, type RoleType} from "./roleTypeModel";
 import {mapRoleToPressurePosition, type PressurePosition} from "./pressurePositionModel";
 import {evaluateRisk, type RiskLevel} from "./riskMatrix";
-import {selectNarrativeTemplate} from "./narrativeSelector";
-
+import {selectNarrativeTemplate } from "./narrativeSelector";
+import { NarrativeTemplate } from "./narrativeTemplates";
 /*
 =============================================================
 Input Contract (from front-end API)
@@ -65,6 +65,10 @@ export interface SystemMapResult {
         positionBehavior: string[];
     };
     narrativeTemplateId: string;
+    narrativeTemplate: NarrativeTemplate;
+
+
+
 }
 
 /*
@@ -79,7 +83,7 @@ phase value from what it returns
 
 */
 
-export function buildSystemMap(
+export function BuildSystemMap(
     input: SystemMapInput
 ): SystemMapResult{
     /*
@@ -150,7 +154,7 @@ export function buildSystemMap(
 
     */ 
 
-    const { templateId } = selectNarrativeTemplate (
+    const { templateId, template } = selectNarrativeTemplate (
         phase,
         pressurePosition
     );
@@ -170,7 +174,8 @@ export function buildSystemMap(
         pressurePosition,
         riskLevel,
         behavior,
-        narrativeTemplateId: templateId
+        narrativeTemplateId: templateId,
+        narrativeTemplate: template 
 
     };
 }
