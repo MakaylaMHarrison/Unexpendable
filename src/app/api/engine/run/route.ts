@@ -38,7 +38,14 @@ Post /api/engine/run
 -Returns structured result as JSON
 */
 
-//Defines an API rout handler for Post requests
+//Defines an API route handler for Post requests
 //This maps to Post /api/engine/run
 
-export async function POST(req: NextRequest)
+export async function POST(req: NextRequest) {
+    //Starts error handling block. Anything that fails inside here jumps to catch
+    try{
+        const body = await req.json();
+        // Convert incoming request into useable data
+        //Reads the request body
+    }
+}

@@ -58,9 +58,9 @@ export async function POST(req: NextRequest) {
 
 ---
 
-```ts id="5"
+
     try {
-```
+
 
 👉 Starts error handling block
 
